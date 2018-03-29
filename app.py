@@ -32,6 +32,8 @@ def makeWebhookResult(req):
      #   return {}
     parameters = req.get("result").get("action") 
 
+    #print parameters
+
     if parameters[:7]=='faculty':
        zone =  findFacultyInfo(req,parameters)
     else:
@@ -58,32 +60,37 @@ def findFacultyInfo(req , faculty):
     result = req.get("result")
 
     query = result.get("resolvedQuery")
+
+    param = result.get("parameters")
+    p = param.get("faculty")
+
+    #print p
     if 'email' in query.lower():
-        res = data.loc[[faculty[7:]],'email']
+        res = data.loc[[p],'email']
         zone = res[0]
 
     elif 'office' in query.lower():
-        res = data.loc[[faculty[7:]],'office']
+        res = data.loc[[p],'office']
         zone = res[0]
-        
+
     elif 'contact' in query.lower():
-        res = data.loc[[faculty[7:]],'office']
+        res = data.loc[[p],'office']
         zone = res[0]
 
     elif 'room' in query.lower():
-        res = data.loc[[faculty[7:]],'office']
-        zone = res[0]
-        
-    elif 'phone' in query.lower():
-        res = data.loc[[faculty[7:]],'phone']
+        res = data.loc[[p],'office']
         zone = res[0]
         
     elif 'mobile' in query.lower():
-        res = data.loc[[faculty[7:]],'phone']
+        res = data.loc[[p],'phone']
+        zone = res[0]
+
+    elif 'phone' in query.lower():
+        res = data.loc[[p],'phone']
         zone = res[0]
 
     else:
-        res = data.loc[[faculty[7:]],'details']
+        res = data.loc[[p],'details']
         zone = res[0] 
     
     return zone
