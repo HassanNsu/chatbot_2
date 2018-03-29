@@ -65,8 +65,16 @@ def findFacultyInfo(req , faculty):
     elif 'office' in query.lower():
         res = data.loc[[faculty[7:]],'office']
         zone = res[0]
-
+        
+    elif 'contact' in query.lower():
+        res = data.loc[[faculty[7:]],'office']
+        zone = res[0]
+        
     elif 'phone' in query.lower():
+        res = data.loc[[faculty[7:]],'phone']
+        zone = res[0]
+        
+    elif 'mobile' in query.lower():
         res = data.loc[[faculty[7:]],'phone']
         zone = res[0]
 
