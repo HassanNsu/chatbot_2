@@ -33,7 +33,7 @@ def makeWebhookResult(req):
     #if req.get("result").get("action") != "facultyAMC":
      #   return {}
     faculty = req.get("result").get("action") 
-    print faculty
+    #print faculty
     result = req.get("result")
 
     query = result.get("resolvedQuery")
