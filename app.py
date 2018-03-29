@@ -26,13 +26,34 @@ def webhook():
     return r
 
 def makeWebhookResult(req):
-    data = pd.read_csv('all_faculty2.csv')
 
-    data.set_index("initial", inplace=True) 
      
     #if req.get("result").get("action") != "facultyAMC":
      #   return {}
-    faculty = req.get("result").get("action") 
+    parameters = req.get("result").get("action") 
+
+    if parameters[:7]=='faculty':
+       zone =  findFacultyInfo(req,parameters)
+    else:
+        zone=''
+   
+
+
+
+    speech=zone
+
+    return {
+        "speech": speech,
+        "displayText": speech,
+ #       "data": {"facebook": facebook_message},
+        "source": parameters
+    }
+
+def findFacultyInfo(req , faculty):
+    data = pd.read_csv('all_faculty2.csv')
+
+    data.set_index("initial", inplace=True) 
+
     #print faculty
     result = req.get("result")
 
@@ -51,44 +72,9 @@ def makeWebhookResult(req):
 
     else:
         res = data.loc[[faculty[7:]],'details']
-        zone = res[0]    
-
-
-
-    speech=zone
-    """
-    facebook_message = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [
-                    {
-                        "title":'title',
-                        "image_url": "url",
-                        "subtitle": speech,
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "url": "url",
-                                "title": "View Details"
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
-    }    
-    """
-    return {
-        "speech": speech,
-        "displayText": speech,
- #       "data": {"facebook": facebook_message},
-        "source": "Mohammad Ehsanul Karim"
-    }
-
-#def findFacultyInfo():
- 
+        zone = res[0] 
+    
+    return zone
 
 
 if __name__ == '__main__':
