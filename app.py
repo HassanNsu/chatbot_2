@@ -36,6 +36,8 @@ def makeWebhookResult(req):
 
     if parameters[:7]=='faculty':
        zone =  findFacultyInfo(req,parameters)
+    elif parameters == 'coursePre':
+        zone = findCourseInfo(req,parameters)
     else:
         zone=''
    
@@ -94,6 +96,45 @@ def findFacultyInfo(req , faculty):
         zone = res[0] 
     
     return zone
+
+def findCourseInfo(req , faculty):
+    data = pd.read_csv('allCourse.csv')
+
+    data.set_index("code", inplace=True) 
+
+    #print faculty
+    result = req.get("result")
+
+
+    param = result.get("parameters")
+    p = param.get("Course")
+
+    courseCode=p
+    res2=courseCode+" : "
+    res3 = data.loc[[courseCode],'name']
+    res4=  data.loc[[courseCode],'credit']
+    res5 = data.loc[[courseCode],'pre'] 
+
+    result = str(res2) + str(res3[0]) + "\nCredit Hours : " + str(res4[0]) +" \nPre-requisites : " + str(res5[0])
+
+    labCourse = " 115 215 225 231 311 331 141 111 211 241 312 321 342 362 363 321 331 424 426 471 "
+    #print courseCode[4:]
+
+    if courseCode[4:] in labCourse:
+        courseCode = courseCode+"L"
+        res2=courseCode+" : "
+        res3 = data.loc[[courseCode],'name']
+        res4=  data.loc[[courseCode],'credit']
+        res5 = data.loc[[courseCode],'pre']
+
+        result= result+"\nLab Course for this course:\n"+ str(res2) + str(res3[0]) + "\nCredit Hours : " + str(res4[0]) +" \nPre-requisites : " + str(res5[0])
+
+
+    finalResult= result + "\nNote : No courses can take without prerequisite\nFor details see this link http://ece.northsouth.edu/undergraduate/academics/programs/"
+    
+    #print finalResult
+
+    return finalResult
 
 
 if __name__ == '__main__':
