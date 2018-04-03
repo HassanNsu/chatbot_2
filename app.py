@@ -130,7 +130,7 @@ def findCourseInfo(req , faculty):
         result= result+"\nLab Course for this course:\n"+ str(res2) + str(res3[0]) + "\nCredit Hours : " + str(res4[0]) +" \nPre-requisites : " + str(res5[0])
 
 
-    finalResult= result + "\nNote : No courses can take without prerequisite\nFor details see this link http://ece.northsouth.edu/undergraduate/academics/programs/"
+    finalResult= result + "\nNote : No courses can take without prerequisite .\nFor details see this link http://ece.northsouth.edu/undergraduate/academics/programs/"
     
     #print finalResult
 
