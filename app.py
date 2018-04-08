@@ -120,7 +120,7 @@ def findCourseInfo(req , faculty):
     labCourse = " 115 215 225 231 311 331 141 111 211 241 312 321 342 362 363 321 331 424 426 471 "
     #print courseCode[4:]
 
-    if courseCode[4:] in labCourse:
+    if courseCode[3:] in labCourse:
         courseCode = courseCode+"L"
         res2=courseCode+" : "
         res3 = data.loc[[courseCode],'name']
