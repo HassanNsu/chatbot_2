@@ -126,9 +126,7 @@ def findCourseInfo(req , faculty):
         res3 = data.loc[[courseCode],'name']
         res4=  data.loc[[courseCode],'credit']
         res5 = data.loc[[courseCode],'pre']
-        print (res2)
-        print (res3)
-        print (res4)
+
         result= result+"\nLab Course for this course:\n"+ str(res2) + str(res3[0]) + "\nCredit Hours : " + str(res4[0]) +" \nPre-requisites : " + str(res5[0])
 
 
