@@ -88,3 +88,66 @@ ETE471,Digital Signal Processing,3,ETE 221
 ETE471L,Digital Signal Processing Lab,0,ETE 221
 ETE499A,Senior Design Project I,1.5,"ETE331, ETE424, ETE426, ETE 471, ETE 452, 100 credits completed"
 ETE499B,Senior Design Project II,1.5,ETE 499A
+CSE417,Numerical Methods,3,"CSE 225, MAT 125, MAT 240 "
+CSE401,Advanced Programming Techniques,3,None
+CSE418,Computer Graphics,3,"CSE 225, CSE 332"
+CSE426,Compiler Constructions,3,"CSE 173, CSE 225"
+CSE473,Theory of Computation,3,None
+CSE411,Advanced Database Systems,3,CSE 311
+CSE424,Object-Oriented Software Developments,3,CSE 327
+CSE427,Software Quality Assurances & Testing,3,CSE 327 or Consent from Instructor
+CSE428,Software Process Management,3,CSE 327
+CSE429,Software System Architecture,3,CSE 327
+CSE482,Internet and Web Technology,3,CSE338
+CSE492,Special Topics,3,None
+CSE338,Data Communication & network,3,CSE 215
+CSE438,Parallel and Distributed Systems,3,CSE 338
+CSE422,Modelling and Simulation,3,None
+CSE485,Digital Signal Processing,3,None
+CSE486,Mobile and Wireless Application Development,3,None
+CSE433,Advanced Computer Architecture,3,CSE 331
+CSE435,Introduction to VLSI Design,3,"EEE111, CSE 231/EEE211"
+CSE413,"Verilog HDL: Modelling, Simulation and synthesis",3,CSE 231/EEE 211
+CSE414,Advanced Chip Design Methodology and Optimiza.using HD,3,CSE 413
+CSE494,Special Topics,3,None
+CSE419,Data Mining,3,None
+CSE440,Artificial Intelligence,3,CSE 225 and MAT 361; or consent of instructor.
+CSE445,Machine Learning,3,CSE 348 or Consent from Instructor
+CSE465,Pattern Recognition and Neural Network,3,None
+CSE467,Digital Image Processing,3,None
+CSE468,Computer Vision,3,CSE 440 (Artificial Intelligence)
+CSE470,Theory of Fuzzy Systerms,3,None
+CSE446,Introductions to Bioinformatics,3,None
+CSE447,Molecular Biology,3,None
+CSE448,Genome Sequence & Analysis,3,None
+CSE449,Structural Bioinformatics,3,None
+CSE496,Special Topics,3,None
+EEE422,Principles of Digital Communications,3,None
+EEE423,Principles of Telecommunication Network,3,EEE410
+EEE413,"Verilog HDL: Modeling, Simulation and Synthesis",3,ETE 331 or consent from Instructor
+EEE427,Satellite Communication System,3,None
+EEE428,RF and Microwave Engineering + IL (*ETE 428),3,None
+EEE410,Semiconductor Devices and Technology,3,EEE 111
+EEE415,CMOS Analog Circuit Design,3,EEE 411
+EEE421,Stochastic Signals and Systems,3,None
+EEE453,Microprocessor Interface and Embedded System,3,None
+EEE464,Power Stations,3,None
+EEE465,High Voltage Engineering,3,None
+EEE492,Special Topics,3,None
+EEE424,Mobile and Wireless Communication System,3,None
+EEE426,Fiber Optic Communication System,4,None
+EEE493,Special Topics,3,None
+EEE432,Artificial Intelligence,3,CSE 225 and CSE 332; or consent of instructor
+EEE433,Pattern Recognition and Neural Network,3,EEE 432 and consent of the instructor.
+EEE436,Theory of Fuzzy Systems,3,EEE 432 or Consent from Instructor
+EEE468,Computer Vision,3,CSE 440 (Artificial Intelligence)
+EEE494,Special Topics,3,CSE 225 and MAT 361; or consent of instructor.
+EEE331,Data Communications & Networks,3,None
+EEE451,Telecommunications Business and Management,3,None
+EEE471,Digital Signal Processing ,3,None
+EEE495,Special Topics,3,None
+EEE411,Introduction to VLSI Design,3,EEE410
+EEE414,Advanced VLSI Chip Design Methodology and Optimization using HDL,3,None
+EEE491,Special Topics,3,CSE 311
+EEE461,Power System Operations & Reliability,3,None
+EEE462,Switchgear and Protection,3,None
