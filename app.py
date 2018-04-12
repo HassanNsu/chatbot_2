@@ -7,6 +7,11 @@ from flask import Flask
 from flask import request
 from flask import make_response
 import pandas as pd
+dataFaculty = pd.read_csv('all_faculty2.csv')
+dataFaculty.set_index("initial", inplace=True) 
+
+dataCourse = pd.read_csv('allCourse.csv')
+dataCourse.set_index("code", inplace=True) 
 
 # Flask app should start in global layout
 app = Flask(__name__)
@@ -54,9 +59,9 @@ def makeWebhookResult(req):
     }
 
 def findFacultyInfo(req , faculty):
-    data = pd.read_csv('all_faculty2.csv')
 
-    data.set_index("initial", inplace=True) 
+
+
 
     #print faculty
     result = req.get("result")
@@ -68,39 +73,39 @@ def findFacultyInfo(req , faculty):
 
     #print p
     if 'email' in query.lower():
-        res = data.loc[[p],'email']
+        res = dataFaculty.loc[[p],'email']
         zone = res[0]
 
     elif 'office' in query.lower():
-        res = data.loc[[p],'office']
+        res = dataFaculty.loc[[p],'office']
         zone = res[0]
 
     elif 'contact' in query.lower():
-        res = data.loc[[p],'office']
+        res = dataFaculty.loc[[p],'office']
         zone = res[0]
 
     elif 'room' in query.lower():
-        res = data.loc[[p],'office']
+        res = dataFaculty.loc[[p],'office']
         zone = res[0]
         
     elif 'mobile' in query.lower():
-        res = data.loc[[p],'phone']
+        res = dataFaculty.loc[[p],'phone']
         zone = res[0]
 
     elif 'phone' in query.lower():
-        res = data.loc[[p],'phone']
+        res = dataFaculty.loc[[p],'phone']
         zone = res[0]
 
     else:
-        res = data.loc[[p],'details']
+        res = dataFaculty.loc[[p],'details']
         zone = res[0] 
     
     return zone
 
 def findCourseInfo(req , faculty):
-    data = pd.read_csv('allCourse.csv')
 
-    data.set_index("code", inplace=True) 
+
+
 
     #print faculty
     result = req.get("result")
@@ -111,21 +116,21 @@ def findCourseInfo(req , faculty):
 
     courseCode=p
     res2=courseCode+" : "
-    res3 = data.loc[[courseCode],'name']
-    res4=  data.loc[[courseCode],'credit']
-    res5 = data.loc[[courseCode],'pre'] 
+    res3 = dataCourse.loc[[courseCode],'name']
+    res4=  dataCourse.loc[[courseCode],'credit']
+    res5 = dataCourse.loc[[courseCode],'pre'] 
 
     result = str(res2) + str(res3[0]) + "\nCredit Hours : " + str(res4[0]) +" \nPre-requisites : " + str(res5[0])
 
-    labCourse = " 115 215 225 231 311 331 141 111 211 241 312 321 342 362 363 321 331 424 426 471 "
+    labCourse = " CSE115 CSE215 CSE225 CSE231 CSE311 CSE331 EEE141 EEE111 EEE211 EEE241 EEE312 EEE321 EEE342 EEE362 EEE363 ETE321 ETE331 ETE424 ETE426 ETE471 "
     #print courseCode[4:]
 
-    if courseCode[3:] in labCourse:
+    if courseCode in labCourse:
         courseCode = courseCode+"L"
         res2=courseCode+" : "
-        res3 = data.loc[[courseCode],'name']
-        res4=  data.loc[[courseCode],'credit']
-        res5 = data.loc[[courseCode],'pre']
+        res3 = dataCourse.loc[[courseCode],'name']
+        res4=  dataCourse.loc[[courseCode],'credit']
+        res5 = dataCourse.loc[[courseCode],'pre']
 
         result= result+"\nLab Course for this course:\n"+ str(res2) + str(res3[0]) + "\nCredit Hours : " + str(res4[0]) +" \nPre-requisites : " + str(res5[0])
 
